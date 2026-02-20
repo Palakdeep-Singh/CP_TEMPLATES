@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-
 // --- Macros ---
 #define ll long long
 #define vi vector<int>
@@ -74,3 +71,13 @@ ll countDivisors(ll n)
 //   rep(i, 1, n + 1) for (int j = i; j <= n; j += i) pre[j].pb(i);
 //   return pre;
 // }
+
+// finding number of divisors that divide the whole array elements.
+ll commonDivisors(vll &nums, ll n)
+{
+
+  ll gcd_ = 0;
+  rep(i, 0, n) gcd_ = gcd(gcd_, nums[i]);
+
+  return countDivisors(gcd_);
+}
